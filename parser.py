@@ -3,7 +3,7 @@ import requests
 from time import time
 import threading
 from sql_logik import create_database
-from loger import Logger
+from logger import Logger
 
 save = []
 

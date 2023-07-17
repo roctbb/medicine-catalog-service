@@ -1,0 +1,1 @@
+from medicines_service import app

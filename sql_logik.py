@@ -30,22 +30,14 @@ def create_database(data, path):
     conn.close()
 
 
-def get_ids_from_database_by_let(letters: str) -> list:
+def get_by_query(letters: str) -> list:
     # Устанавливаем соединение с базой данных
-    conn = sqlite3.connect('data.db')
-    cursor = conn.cursor()
+    with sqlite3.connect('data.db') as conn:
+        cursor = conn.cursor()
 
-    # Запрос для получения ID совпадающих строк
-    query = "SELECT id FROM hil WHERE name_l LIKE ?"
-    matching_ids = cursor.execute(query, (letters.lower() + '%',)).fetchall()
+        query = "SELECT * FROM hil WHERE name_l LIKE ?"
+        return cursor.execute(query, ('%' + letters.lower() + '%',)).fetchall()
 
-    # Закрываем соединение с базой данных
-    conn.close()
-
-    # Преобразуем список кортежей в список ID
-    ids = [row[0] for row in matching_ids]
-
-    return ids
 
 def get_all_by_id(id: int):
     # Устанавливаем соединение с базой данных

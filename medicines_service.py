@@ -18,7 +18,7 @@ loge = Logger("web.log")
 def search():
     query = request.args.get('name')
 
-    if query and len(query) > 3:
+    if query and len(query) >= 3:
         results = get_by_query(query)
 
         return jsonify([{

@@ -23,7 +23,7 @@ def search():
 
         return jsonify([{
             "id": result[0],
-            "name": result[5],
+            "title": result[5],
         } for result in results])
     else:
         return jsonify([])

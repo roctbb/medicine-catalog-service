@@ -5,7 +5,7 @@ from methods import *
 
 @app.route("/search", methods=['get'])
 def search():
-    query = request.args.get('name')
+    query = request.args.get('title')
 
     if query and len(query) >= 2:
         results = find_by_name(query)

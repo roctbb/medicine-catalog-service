@@ -1,4 +1,6 @@
-flask
+Flask
+Flask-SQLAlchemy
 flask-cors
-bs4
-requests
+psycopg2-binary
+flask_migrate
+sentry-sdk[flask]

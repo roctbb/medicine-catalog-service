@@ -2,3 +2,4 @@ venv
 .idea
 data.db
 *.log
+config.py

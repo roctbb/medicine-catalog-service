@@ -6,6 +6,7 @@ from methods import *
 @app.route("/search", methods=['get'])
 def search():
     query = request.args.get('title')
+    atx = request.args.get('atx')
 
     if query and len(query) >= 2:
         results = find_by_name(query)
@@ -13,6 +14,8 @@ def search():
             "id": result.id,
             "title": result.title,
         } for result in results])
+    elif atx:
+        return find_by_atx(atx)
     else:
         return jsonify([])
 

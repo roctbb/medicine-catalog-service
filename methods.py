@@ -12,5 +12,11 @@ def find_by_name(name: str) -> list:
     return []
 
 
+def find_by_atx(atx: str) -> list:
+    atx = atx.upper().strip()
+
+    return Medicine.query.filter(atx=atx).all()
+
+
 def get_by_id(id: int):
     return Medicine.query.filter_by(id=id).first()

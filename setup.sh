@@ -1,4 +1,5 @@
 sudo pip3 install -r requirements.txt
+sudo cp medicines_service.ini /etc/uwsgi/apps/
 sudo cp services_medicines.conf /etc/supervisor/conf.d/
 sudo cp services_medicines_nginx.conf /etc/nginx/sites-enabled/
 sudo supervisorctl update
